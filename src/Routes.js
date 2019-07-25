@@ -6,6 +6,7 @@ import Home from "./Views/Home";
 import Team from "./Views/Team";
 import Review from "./Views/Review";
 import Health from "./Views/Health";
+import ActionItems from "./Views/ActionItems";
 import ActionItem from "./Views/ActionItem";
 import Discussion from "./Views/Discussion";
 import { useMemberList } from "./helpers";
@@ -28,9 +29,10 @@ export default function Routes() {
           <Route path="/review" component={Review} />
           <Route path="/health" component={Health} />
           <Route
-            path="/action-items"
+            path="/action-item"
             render={() => <ActionItem members={members} />}
           />
+          <Route path={"/action-items"} component={ActionItems} />
           <Route path="/discussion" component={Discussion} />
           <Route component={Home} />
         </Switch>

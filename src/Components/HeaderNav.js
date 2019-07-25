@@ -49,12 +49,12 @@ const NavItem = styled(Link)`
   justify-content: flex-start;
   font-size: 20px;
   align-items: center;
+  width: 100%;
 
   &.active {
     font-weight: bold;
     border-bottom: 2px;
     border-bottom-color: white;
-    padding: 0 10px;
   }
 
   > svg {
@@ -66,7 +66,7 @@ const NavItem = styled(Link)`
     height: 100%;
     flex-direction: row;
 
-    :hover {
+    &:hover {
       font-weight: bold;
       padding: 0 10px;
     }
