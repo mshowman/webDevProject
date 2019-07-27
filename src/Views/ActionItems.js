@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Container from "../Components/Container";
-import { Modal } from "../helpers";
+import ActionItem from "./ActionItem";
 
 const TableContainer = styled(Container)`
   padding: 20px 0;
@@ -45,62 +45,64 @@ const HeadCell = styled(Cell)`
   font-weight: bold;
 `;
 
-const Table = styled.table`
+const TableBody = styled.tbody`
   display: flex;
-  border-collapse: collapse;
-  flex-wrap: wrap;
+  flex-direction: row;
   width: 100%;
+  flex-wrap: wrap;
+  margin: 0 auto;
 
   @media (min-width: 917px) {
     width: 80%;
   }
 `;
 
-const ActionItems = () => {
+const Table = styled.table`
+  display: flex;
+  border-collapse: collapse;
+  width: 100%;
+`;
+
+const Button = styled.button``;
+
+const ActionItems = ({ members }) => {
   const [modal, setModal] = useState(false);
-
-  useEffect(() => {
-    return () => {
-      setModal(modal);
-
-      if (modal) {
-        Modal();
-      }
-    };
-  });
 
   return (
     <TableContainer>
       <Table>
-        <Row>
-          <HeadCell>Date</HeadCell>
-          <HeadCell>Author</HeadCell>
-          <HeadCell>Assigned To</HeadCell>
-          <HeadCell>Info</HeadCell>
-          <HeadCell>Complete?</HeadCell>
-        </Row>
-        <Row onClick={() => setModal(true)}>
-          <Cell>2/2/18</Cell>
-          <Cell>Mo</Cell>
-          <Cell>Matt</Cell>
-          <Cell>Test 1</Cell>
-          <Cell>No</Cell>
-        </Row>
-        <Row>
-          <Cell>2/9/18</Cell>
-          <Cell>Justin</Cell>
-          <Cell>Paul</Cell>
-          <Cell>Test 2</Cell>
-          <Cell>Yes</Cell>
-        </Row>
-        <Row>
-          <Cell>3/2/19</Cell>
-          <Cell>Ryan</Cell>
-          <Cell>Laerte</Cell>
-          <Cell>Test 3</Cell>
-          <Cell>No</Cell>
-        </Row>
+        <TableBody>
+          <Row>
+            <HeadCell>Date</HeadCell>
+            <HeadCell>Author</HeadCell>
+            <HeadCell>Assigned To</HeadCell>
+            <HeadCell>Info</HeadCell>
+            <HeadCell>Complete?</HeadCell>
+          </Row>
+          <Row onClick={() => setModal(!modal)}>
+            <Cell>2/2/18</Cell>
+            <Cell>Mo</Cell>
+            <Cell>Matt</Cell>
+            <Cell>Test 1</Cell>
+            <Cell>No</Cell>
+          </Row>
+          <Row>
+            <Cell>2/9/18</Cell>
+            <Cell>Justin</Cell>
+            <Cell>Paul</Cell>
+            <Cell>Test 2</Cell>
+            <Cell>Yes</Cell>
+          </Row>
+          <Row>
+            <Cell>3/2/19</Cell>
+            <Cell>Ryan</Cell>
+            <Cell>Laerte</Cell>
+            <Cell>Test 3</Cell>
+            <Cell>No</Cell>
+          </Row>
+        </TableBody>
       </Table>
+      {modal && <ActionItem members={members} />}
     </TableContainer>
   );
 };

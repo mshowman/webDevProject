@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import styled from 'styled-components';
+import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStethoscope,
@@ -76,7 +76,7 @@ const NavItem = styled(Link)`
     }
   }
 
-  @media (min-width: 1100px){
+  @media (min-width: 1100px) {
     > svg {
       display: inline-block;
       padding-right: 8px;

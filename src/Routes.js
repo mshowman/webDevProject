@@ -29,10 +29,9 @@ export default function Routes() {
           <Route path="/review" component={Review} />
           <Route path="/health" component={Health} />
           <Route
-            path="/action-item"
-            render={() => <ActionItem members={members} />}
+            path={"/action-items"}
+            render={() => <ActionItems members={members} />}
           />
-          <Route path={"/action-items"} component={ActionItems} />
           <Route path="/discussion" component={Discussion} />
           <Route component={Home} />
         </Switch>
