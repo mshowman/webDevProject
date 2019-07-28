@@ -7,7 +7,6 @@ import Team from "./Views/Team";
 import Review from "./Views/Review";
 import Health from "./Views/Health";
 import ActionItems from "./Views/ActionItems";
-import ActionItem from "./Views/ActionItem";
 import Discussion from "./Views/Discussion";
 import { useMemberList } from "./helpers";
 

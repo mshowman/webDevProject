@@ -6,7 +6,19 @@ import Container from "../Components/Container";
 const FormItem = styled.input`
   display: flex;
   flex-direction: column;
-  flex-basis: 100%;
+  flex: 1;
+  margin: 5px 0;
+  text-align-last: center;
+  width: 100%;
+
+  @media (min-width: 917px) {
+    margin: 5px 30px;
+  }
+`;
+
+const Button = styled.button`
+  display: flex;
+  flex-direction: column;
   flex: 1;
   margin: 5px 0;
   text-align-last: center;
@@ -19,10 +31,10 @@ const FormItem = styled.input`
 const FormSelect = styled.select`
   display: flex;
   flex-direction: column;
-  flex-basis: 100%;
   flex: 1;
   margin: 5px 0;
   text-align-last: center;
+  width: 100%;
 
   @media (min-width: 917px) {
     margin: 5px 30px;
@@ -32,9 +44,9 @@ const FormSelect = styled.select`
 const FormLabel = styled.label`
   display: flex;
   flex-direction: column;
-  flex-basis: 100%;
   flex: 1;
   margin: 5px 0;
+  width: 100%;
 
   @media (min-width: 917px) {
     margin: 5px 30px;
@@ -43,9 +55,25 @@ const FormLabel = styled.label`
 
 const RowContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
+
+  @media (min-width: 917px) {
+    flex-direction: row;
+  }
+`;
+
+const FormTextArea = styled.textarea`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 5px 0;
+  width: 100%;
+
+  @media (min-width: 917px) {
+    margin: 5px 30px;
+  }
 `;
 
 const ActionItem = ({ members }) => {
@@ -99,7 +127,16 @@ const ActionItem = ({ members }) => {
           </FormSelect>
         </RowContainer>
         <RowContainer>
-          <FormItem type="submit" name="Type" value="Assign Action Item" />
+          <FormLabel htmlFor="description">Description:</FormLabel>
+          <FormTextArea
+            id="description"
+            name="Description"
+            cols="60"
+            rows="5"
+          />
+        </RowContainer>
+        <RowContainer>
+          <Button type="submit">Assign Action Item</Button>
         </RowContainer>
       </FormContainer>
     </Container>

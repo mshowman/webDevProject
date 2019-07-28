@@ -13,18 +13,17 @@ import {
 
 const Navbar = styled.div`
   display: flex;
+  flex-direction: row;
   background-color: darkgreen;
-  flex-direction: column;
   width: 100%;
-  height: 24px;
+  height: 40px;
   flex: 2 100%;
+  margin: 0 auto;
+  padding: 0;
+  justify-content: space-evenly;
 
   @media (min-width: 917px) {
     min-height: 40px;
-    flex-direction: row;
-    margin: 0 auto;
-    padding: 0;
-    justify-content: space-evenly;
   }
 
   a:hover {
@@ -41,15 +40,15 @@ const NavItem = styled(Link)`
   font-weight: normal;
   font-size: 16px;
   text-decoration: none;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   color: white;
   text-shadow: 2px 2px black;
   padding: 0;
   flex-direction: column;
-  justify-content: flex-start;
-  font-size: 20px;
+  justify-content: center;
   align-items: center;
   width: 100%;
+  height: 30px;
 
   &.active {
     font-weight: bold;
@@ -57,14 +56,8 @@ const NavItem = styled(Link)`
     border-bottom-color: white;
   }
 
-  > svg {
-    display: none;
-  }
-
   @media (min-width: 917px) {
-    justify-content: center;
     height: 100%;
-    flex-direction: row;
 
     &:hover {
       font-weight: bold;
@@ -105,6 +98,7 @@ function getTitle(activeTab) {
 
 const HeaderNav = () => {
   const [activeTab, setActiveTab] = useState("home");
+  let isDesktop = window.innerWidth >= 917;
 
   useEffect(() => {
     document.title = `RetroBash | ${getTitle(activeTab)}`;
@@ -118,7 +112,7 @@ const HeaderNav = () => {
         onClick={() => setActiveTab("home")}
       >
         <FontAwesomeIcon icon={faHome} />
-        Home
+        {isDesktop && <span>Home</span>}
       </NavItem>
       <NavItem
         to="/team"
@@ -126,7 +120,7 @@ const HeaderNav = () => {
         onClick={() => setActiveTab("team")}
       >
         <FontAwesomeIcon icon={faUsers} />
-        Team Members
+        {isDesktop && <span>Team Members</span>}
       </NavItem>
       <NavItem
         to="/review"
@@ -134,7 +128,7 @@ const HeaderNav = () => {
         onClick={() => setActiveTab("review")}
       >
         <FontAwesomeIcon icon={faCalendarAlt} />
-        Review Past Sprints
+        {isDesktop && <span>Review Past Sprints</span>}
       </NavItem>
       <NavItem
         to="/action-items"
@@ -142,7 +136,7 @@ const HeaderNav = () => {
         onClick={() => setActiveTab("action")}
       >
         <FontAwesomeIcon icon={faExclamationCircle} />
-        Review Action Items
+        {isDesktop && <span>Review Action Items</span>}
       </NavItem>
       <NavItem
         to="/health"
@@ -150,7 +144,7 @@ const HeaderNav = () => {
         onClick={() => setActiveTab("health")}
       >
         <FontAwesomeIcon icon={faStethoscope} />
-        Happy, Meh, Sad
+        {isDesktop && <span>Happy, Meh, Sad</span>}
       </NavItem>
       <NavItem
         to="/discussion"
@@ -158,7 +152,7 @@ const HeaderNav = () => {
         onClick={() => setActiveTab("discussion")}
       >
         <FontAwesomeIcon icon={faComments} />
-        Discussion
+        {isDesktop && <span>Discussion</span>}
       </NavItem>
     </Navbar>
   );

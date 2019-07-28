@@ -3,11 +3,14 @@ import styled from "styled-components";
 const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
-  margin: 0 20px;
   align-items: center;
+  justify-content: center;
+  background-color: lightgray;
+  border: 2px solid black;
+  padding: 10px;
+  margin: 0;
 
   @media (min-width: 917px) {
-    justify-content: center;
     margin: 10px 0;
   }
 `;

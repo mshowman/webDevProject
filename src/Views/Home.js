@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import gmLogo from "../Images/gmLogo.png";
 import Container from "../Components/Container";
 
 const Hero = styled.h1`
@@ -18,19 +17,17 @@ const CopyText = styled.p`
   margin: 0 20px;
 `;
 
-const Image = styled.img`
-  float: left;
-  margin: 5px 20px 10px 0;
-  max-width: 40%;
-  height: auto;
-`;
+// const Image = styled.img`
+//   float: left;
+//   margin: 5px 20px 10px 0;
+//   max-width: 40%;
+//   height: auto;
+// `;
 
 const Home = () => {
   return (
     <Container>
-      <Hero>
-        <Image src={gmLogo} alt="Gigmasters Logo" /> Sprint Retrospective
-      </Hero>
+      <Hero>Sprint Retrospective</Hero>
       <CopyText>
         &#8195;This is text for the page. lkasdjfaadflkajdfa dfalkdsjfaldskfj
         asldfk aldsfjadfalkjdf adflakjd f sdl slfkjsd fsldkjs dlksfjldkjfsd

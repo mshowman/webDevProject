@@ -63,7 +63,11 @@ const Table = styled.table`
   width: 100%;
 `;
 
-const Button = styled.button``;
+const Button = styled.button`
+  width: 50%;
+  height: auto;
+  margin: 20px auto;
+`;
 
 const ActionItems = ({ members }) => {
   const [modal, setModal] = useState(false);
@@ -86,14 +90,14 @@ const ActionItems = ({ members }) => {
             <Cell>Test 1</Cell>
             <Cell>No</Cell>
           </Row>
-          <Row>
+          <Row onClick={() => setModal(!modal)}>
             <Cell>2/9/18</Cell>
             <Cell>Justin</Cell>
             <Cell>Paul</Cell>
             <Cell>Test 2</Cell>
             <Cell>Yes</Cell>
           </Row>
-          <Row>
+          <Row onClick={() => setModal(!modal)}>
             <Cell>3/2/19</Cell>
             <Cell>Ryan</Cell>
             <Cell>Laerte</Cell>
@@ -102,6 +106,8 @@ const ActionItems = ({ members }) => {
           </Row>
         </TableBody>
       </Table>
+      <Button onClick={() => setModal(!modal)}>Add New Action Item...</Button>
+
       {modal && <ActionItem members={members} />}
     </TableContainer>
   );
