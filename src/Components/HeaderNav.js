@@ -16,7 +16,7 @@ const Navbar = styled.div`
   flex-direction: row;
   background-color: darkgreen;
   width: 100%;
-  height: 40px;
+  height: 50px;
   flex: 2 100%;
   margin: 0 auto;
   padding: 0;

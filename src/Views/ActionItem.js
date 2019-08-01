@@ -22,6 +22,7 @@ const Button = styled.button`
   flex: 1;
   margin: 5px 0;
   text-align-last: center;
+  align-items: center;
 
   @media (min-width: 917px) {
     margin: 5px 30px;
@@ -64,6 +65,11 @@ const RowContainer = styled.div`
   }
 `;
 
+const Radio = styled.input`
+  display: flex;
+  flex-direction: row;
+`;
+
 const FormTextArea = styled.textarea`
   display: flex;
   flex-direction: column;
@@ -76,10 +82,19 @@ const FormTextArea = styled.textarea`
   }
 `;
 
+const RadioAndLabel = styled.span`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+`;
+
 const ActionItem = ({ members }) => {
   var date = new Date(Date.now());
   const [member, setMember] = useState(members[1]);
   const [assignedMember, setAssignedMember] = useState(members[0]);
+  const [optionSelected, setOptionSelected] = useState("no");
 
   return (
     <Container>
@@ -134,6 +149,29 @@ const ActionItem = ({ members }) => {
             cols="60"
             rows="5"
           />
+        </RowContainer>
+        <RowContainer>
+          <FormLabel>Has this action item been completed?</FormLabel>
+          <RadioAndLabel>
+            <Radio
+              type="radio"
+              name="Completed?"
+              value="no"
+              onChange={() => setOptionSelected("no")}
+              checked={optionSelected === "no"}
+            />
+            No
+          </RadioAndLabel>
+          <RadioAndLabel>
+            <Radio
+              type="radio"
+              name="Completed?"
+              value="yes"
+              onChange={() => setOptionSelected("yes")}
+              checked={optionSelected === "yes"}
+            />
+            Yes
+          </RadioAndLabel>
         </RowContainer>
         <RowContainer>
           <Button type="submit">Assign Action Item</Button>
