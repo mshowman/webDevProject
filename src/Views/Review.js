@@ -6,17 +6,18 @@ import Container from "../Components/Container";
 const Copy = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 50px 20px;
+  margin: 0 20px 20px;
 
   @media (min-width: 917px) {
     flex-direction: row;
     justify-content: center;
+    margin: 0 50px 20px;
   }
 `;
 
 const CopyText = styled.p`
   display: flex;
-  padding: 10px;
+  padding: 10px 0;
   text-align: justify;
   width: 100%;
   margin: 0;
@@ -37,9 +38,11 @@ const IFrame = styled.iframe`
 const Image = styled.img`
   display: flex;
   width: 80%;
+  margin: 0 auto;
 
   @media (min-width: 917px) {
     width: 20%;
+    margin: 0;
   }
 `;
 

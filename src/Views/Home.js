@@ -8,7 +8,8 @@ const CopyText = styled.p`
   flex-direction: column;
   min-width: 140px;
   margin: 20px;
-  width: 50%;
+  width: 90%;
+  text-align: justify;
 
   @media (min-width: 917px) {
     width: 100%;

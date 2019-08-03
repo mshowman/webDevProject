@@ -54,17 +54,6 @@ const FormLabel = styled.label`
   }
 `;
 
-const RowContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  width: 100%;
-
-  @media (min-width: 917px) {
-    flex-direction: row;
-  }
-`;
-
 const Radio = styled.input`
   display: flex;
   flex-direction: row;
@@ -90,8 +79,19 @@ const RadioAndLabel = styled.span`
   width: 25%;
 `;
 
+const RowContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+
+  @media (min-width: 917px) {
+    flex-direction: row;
+  }
+`;
+
 const ActionItem = ({ members }) => {
-  var date = new Date(Date.now());
+  const date = new Date(Date.now());
   const [member, setMember] = useState(members[1]);
   const [assignedMember, setAssignedMember] = useState(members[0]);
   const [optionSelected, setOptionSelected] = useState("no");
@@ -108,10 +108,10 @@ const ActionItem = ({ members }) => {
           <FormItem id="date" name="Date" type="text" value={date} readOnly />
         </RowContainer>
         <RowContainer>
-          <FormLabel htmlFor="memberSelect">Writer:</FormLabel>
+          <FormLabel htmlFor="memberSelect">Author:</FormLabel>
           <FormSelect
-            id="writer"
-            name="Writer"
+            id="author"
+            name="Author"
             onChange={event => setMember(members[event.target.key])}
             value={member}
           >
