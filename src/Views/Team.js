@@ -17,6 +17,7 @@ const FormSelect = styled.select`
 
   @media (min-width: 917px) {
     margin: 5px 30px;
+    width: 30%;
   }
 `;
 
@@ -29,7 +30,13 @@ const FormLabel = styled.label`
 
   @media (min-width: 917px) {
     margin: 5px 30px;
+    width: 30%;
   }
+`;
+
+const Button = styled.button`
+  width: 30%;
+  margin: 5px 30px;
 `;
 
 const Team = ({ members }) => {
@@ -38,19 +45,35 @@ const Team = ({ members }) => {
   return (
     <TeamContainer>
       <Hero>Manage Team</Hero>
-      <FormLabel htmlFor="memberSelect">Writer:</FormLabel>
-      <FormSelect
-        id="writer"
-        name="Writer"
-        onChange={event => setMember(members[event.target.key])}
-        value={member}
-      >
-        {members.map(m => (
-          <option key={m.id} name={m.name}>
-            {m.name}
-          </option>
-        ))}
-      </FormSelect>
+      <div>
+        <FormLabel htmlFor="memberSelect">Author:</FormLabel>
+        <FormSelect
+          id="author"
+          name="Author"
+          onChange={event => setMember(members[event.target.key])}
+          value={member}
+        >
+          {members.map(m => (
+            <option key={m.id} name={m.name}>
+              {m.name}
+            </option>
+          ))}
+        </FormSelect>
+        <FormLabel htmlFor="attendingMembers">Attending Members:</FormLabel>
+        <FormSelect
+          id="attendingMembers"
+          name="AttendingMembers"
+          size="10"
+          multiple
+        >
+          {members.map(m => (
+            <option key={m.id} name={m.name}>
+              {m.name}
+            </option>
+          ))}
+        </FormSelect>
+        <Button onClick={() => alert("Saved.")}>Save Members</Button>
+      </div>
     </TeamContainer>
   );
 };
