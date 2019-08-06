@@ -13,11 +13,11 @@ const Hero = styled.h1`
   width: 100%;
   height: 50px;
 
-  @media (min-width: 917px) {
+  @media (min-width: 992px) {
     height: 100px;
   }
 
-  @media (min-width: 917px) {
+  @media (min-width: 992px) {
     font-size: 58px;
   }
 `;

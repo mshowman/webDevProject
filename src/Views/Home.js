@@ -11,7 +11,7 @@ const CopyText = styled.p`
   width: 90%;
   text-align: justify;
 
-  @media (min-width: 917px) {
+  @media (min-width: 992px) {
     width: 100%;
   }
 `;
@@ -22,7 +22,7 @@ const CopyTextContainer = styled.span`
   width: 100%;
   align-items: center;
 
-  @media (min-width: 917px) {
+  @media (min-width: 992px) {
     width: 70%;
   }
 `;
@@ -41,7 +41,7 @@ const BodyContainer = styled(Container)`
   align-items: center;
   margin-top: 20px;
 
-  @media (min-width: 917px) {
+  @media (min-width: 992px) {
     flex-direction: row;
   }
 `;
@@ -52,7 +52,7 @@ const IFrame = styled.iframe`
   width: 50%;
   height: 30%;
 
-  @media (min-width: 917px) {
+  @media (min-width: 992px) {
     width: 560px;
     height: 315px;
   }

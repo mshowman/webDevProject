@@ -10,7 +10,7 @@ const FormContainer = styled.form`
   padding: 10px;
   margin: 0;
 
-  @media (min-width: 917px) {
+  @media (min-width: 992px) {
     margin: 10px 0;
   }
 `;

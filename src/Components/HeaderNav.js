@@ -22,7 +22,7 @@ const Navbar = styled.div`
   padding: 0;
   justify-content: space-evenly;
 
-  @media (min-width: 917px) {
+  @media (min-width: 992px) {
     min-height: 40px;
   }
 
@@ -30,7 +30,7 @@ const Navbar = styled.div`
     background: rgba(38, 166, 91, 0.4);
   }
 
-  a.active {
+  .active {
     background: rgba(38, 166, 91, 1);
   }
 `;
@@ -56,7 +56,7 @@ const NavItem = styled(Link)`
     border-bottom-color: white;
   }
 
-  @media (min-width: 917px) {
+  @media (min-width: 992px) {
     height: 100%;
 
     &:hover {
@@ -98,7 +98,7 @@ function getTitle(activeTab) {
 
 const HeaderNav = () => {
   const [activeTab, setActiveTab] = useState("home");
-  let isDesktop = window.innerWidth >= 917;
+  let isDesktop = window.innerWidth >= 992;
 
   useEffect(() => {
     document.title = `RetroBash | ${getTitle(activeTab)}`;

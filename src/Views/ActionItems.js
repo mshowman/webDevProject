@@ -30,7 +30,7 @@ const Cell = styled.td`
   border: 1px solid darkgray;
   font-size: 12px;
 
-  @media (min-width: 917px) {
+  @media (min-width: 992px) {
     font-size: 16px;
     text-align: center;
   }
@@ -52,7 +52,7 @@ const TableBody = styled.tbody`
   flex-wrap: wrap;
   margin: 0 auto;
 
-  @media (min-width: 917px) {
+  @media (min-width: 992px) {
     width: 80%;
   }
 `;

@@ -42,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "css-loader": "^3.1.0",
     "esformatter": "^0.10.0",
     "esformatter-jsx": "^8.0.1",
     "esformatter-quotes": "^1.1.0",
@@ -50,6 +51,7 @@
     "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.2",
-    "esprima-fb": "^15001.1001.0-dev-harmony-fb"
+    "esprima-fb": "^15001.1001.0-dev-harmony-fb",
+    "prettier": "^1.18.2"
   }
 }

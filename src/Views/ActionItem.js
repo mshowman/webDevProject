@@ -11,7 +11,7 @@ const FormItem = styled.input`
   text-align-last: center;
   width: 100%;
 
-  @media (min-width: 917px) {
+  @media (min-width: 992px) {
     margin: 5px 30px;
   }
 `;
