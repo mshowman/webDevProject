@@ -48,7 +48,7 @@ const NavItem = styled(Link)`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 30px;
+  height: 50px;
 
   &.active {
     font-weight: bold;
@@ -57,8 +57,6 @@ const NavItem = styled(Link)`
   }
 
   @media (min-width: 992px) {
-    height: 100%;
-
     &:hover {
       font-weight: bold;
       padding: 0 10px;

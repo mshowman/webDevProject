@@ -15,9 +15,6 @@ const Hero = styled.h1`
 
   @media (min-width: 992px) {
     height: 100px;
-  }
-
-  @media (min-width: 992px) {
     font-size: 58px;
   }
 `;
