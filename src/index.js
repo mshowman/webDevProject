@@ -4,6 +4,8 @@ import "./index.css";
 import Routes from "./Routes";
 import * as serviceWorker from "./serviceWorker";
 
+import "normalize.css";
+
 ReactDOM.render(<Routes />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change

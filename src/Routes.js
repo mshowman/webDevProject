@@ -26,13 +26,13 @@ export default function Routes() {
           <Route exact path="/" component={Home} />
           <Route path="/team" render={() => <Team members={members} />} />
           <Route path="/review" component={Review} />
-          <Route path="/health" component={Health} />
+          <Route path="/health" render={() => <Health members={members} />} />
           <Route
             path={"/action-items"}
             render={() => <ActionItems members={members} />}
           />
           <Route path="/discussion" component={Discussion} />
-          <Route component={Home} />
+          <Route path="*" component={Home} />
         </Switch>
       </Container>
     </Router>

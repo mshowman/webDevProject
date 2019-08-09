@@ -9,10 +9,11 @@ const FormItem = styled.input`
   flex: 1;
   margin: 5px 0;
   text-align-last: center;
-  width: 100%;
+  width: auto;
 
   @media (min-width: 992px) {
     margin: 5px 30px;
+    width: 100%;
   }
 `;
 
@@ -35,10 +36,11 @@ const FormSelect = styled.select`
   flex: 1;
   margin: 5px 0;
   text-align-last: center;
-  width: 100%;
+  width: auto;
 
   @media (min-width: 917px) {
     margin: 5px 30px;
+    width: 100%;
   }
 `;
 
@@ -47,10 +49,11 @@ const FormLabel = styled.label`
   flex-direction: column;
   flex: 1;
   margin: 5px 0;
-  width: 100%;
+  width: auto;
 
   @media (min-width: 917px) {
     margin: 5px 30px;
+    width: 100%;
   }
 `;
 
@@ -64,10 +67,11 @@ const FormTextArea = styled.textarea`
   flex-direction: column;
   flex: 1;
   margin: 5px 0;
-  width: 100%;
+  width: auto;
 
   @media (min-width: 917px) {
     margin: 5px 30px;
+    width: 100%;
   }
 `;
 

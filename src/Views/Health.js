@@ -7,41 +7,62 @@ const FieldSet = styled.fieldset`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 10px auto;
   height: auto;
+  background-color: ${props => props.color};
 `;
 
 const Legend = styled.legend`
   text-align: ${props => props.align};
+  background-color: white;
+  border: 1px solid black;
+  padding: 5px;
 `;
 
 const Cell = styled.div`
-  flex: 50%;
+  flex: 45%;
+  margin: 15px;
 `;
 
 const Row = styled.div`
-  width: 90%;
-  margin: 0;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
 `;
 
 const Label = styled.label`
   width: 100px;
+  margin: 5px;
 `;
 
 const TextArea = styled.textarea`
   width: 100%;
   height: 100px;
+  margin: 5px;
 `;
 
 const Select = styled.select`
   width: 100%;
+  height: ${props => (props.box ? "100%" : "auto")};
+  margin: 5px;
+`;
+
+const Button = styled.button`
+  width: 32px;
+  height: 32px;
+  margin: 5px;
+`;
+
+const SaveButton = styled(Button)`
+  width: auto;
+  height: 32px;
+  margin: 5px 5px 5px 30px;
 `;
 
 const Health = () => {
   return (
     <Container>
-      <FieldSet>
+      <FieldSet color="lightgreen">
         <Legend align="left">Happy</Legend>
         <Row>
           <Cell>
@@ -51,57 +72,61 @@ const Health = () => {
             </Select>
             <Label>Feedback:</Label>
             <TextArea></TextArea>
-            <button>-</button>
+            <Button>-</Button>
             <Label>2</Label>
-            <button>+</button>
-            <button>Save Feedback</button>
+            <Button>+</Button>
+            <SaveButton>Save Feedback</SaveButton>
           </Cell>
           <Cell>
-            <Select size="8">
+            <Select size="8" box>
               <option>that</option>
             </Select>
           </Cell>
         </Row>
       </FieldSet>
-      <FieldSet>
+      <FieldSet color="lightyellow">
         <Legend align="center">Meh</Legend>
-        <Cell>
-          <Label>Member:</Label>
-          <Select>
-            <option>this</option>
-          </Select>
-          <Label>Feedback:</Label>
-          <TextArea></TextArea>
-          <button>-</button>
-          <Label>2</Label>
-          <button>+</button>
-          <button>Save Feedback</button>
-        </Cell>
         <Row>
-          <Select size="4">
-            <option>that</option>
-          </Select>
+          <Cell>
+            <Label>Member:</Label>
+            <Select>
+              <option>this</option>
+            </Select>
+            <Label>Feedback:</Label>
+            <TextArea></TextArea>
+            <Button>-</Button>
+            <Label>2</Label>
+            <Button>+</Button>
+            <SaveButton>Save Feedback</SaveButton>
+          </Cell>
+          <Cell>
+            <Select size="8" box>
+              <option>that</option>
+            </Select>
+          </Cell>
         </Row>
       </FieldSet>
-      <FieldSet>
+      <FieldSet color="pink">
         <Legend align="right">Sad</Legend>
-        <Cell>
-          <Label>Member:</Label>
-          <Select>
-            <option>this</option>
-          </Select>
-          <Label>Feedback:</Label>
-          <TextArea></TextArea>
-          <button>-</button>
-          <Label>2</Label>
-          <button>+</button>
-          <button>Save Feedback</button>
-        </Cell>
-        <Cell>
-          <Select size="4">
-            <option>that</option>
-          </Select>
-        </Cell>
+        <Row>
+          <Cell>
+            <Label>Member:</Label>
+            <Select>
+              <option>this</option>
+            </Select>
+            <Label>Feedback:</Label>
+            <TextArea></TextArea>
+            <Button>-</Button>
+            <Label>2</Label>
+            <Button>+</Button>
+            <SaveButton>Save Feedback</SaveButton>
+          </Cell>
+          <Cell>
+            <Select size="8" box>
+              <option>that</option>
+            </Select>
+          </Cell>
+        </Row>
       </FieldSet>
     </Container>
   );
