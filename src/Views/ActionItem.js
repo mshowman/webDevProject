@@ -9,11 +9,11 @@ const FormItem = styled.input`
   flex: 1;
   margin: 5px 0;
   text-align-last: center;
-  width: auto;
+  width: 100%;
 
   @media (min-width: 992px) {
     margin: 5px 30px;
-    width: 100%;
+    width: auto;
   }
 `;
 
@@ -67,11 +67,11 @@ const FormTextArea = styled.textarea`
   flex-direction: column;
   flex: 1;
   margin: 5px 0;
-  width: auto;
+  width: 100%;
 
   @media (min-width: 917px) {
     margin: 5px 30px;
-    width: 100%;
+    width: auto;
   }
 `;
 
@@ -103,7 +103,7 @@ const ActionItem = ({ members }) => {
   return (
     <Container>
       <FormContainer
-        action="mailto:mdshowman@gmail.com?subject=You've been assigned an action item..."
+        action="mailto:your@email.address?subject=You've been assigned an action item..."
         method="post"
         encType="text/plain"
       >

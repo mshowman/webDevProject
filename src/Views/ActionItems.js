@@ -29,6 +29,7 @@ const Cell = styled.td`
   width: 100%;
   border: 1px solid darkgray;
   font-size: 12px;
+  height: 32px;
 
   @media (min-width: 992px) {
     font-size: 16px;

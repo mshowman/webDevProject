@@ -28,10 +28,13 @@ export default function Routes() {
           <Route path="/review" component={Review} />
           <Route path="/health" render={() => <Health members={members} />} />
           <Route
-            path={"/action-items"}
+            path="/action-items"
             render={() => <ActionItems members={members} />}
           />
-          <Route path="/discussion" component={Discussion} />
+          <Route
+            path="/discussion"
+            render={() => <Discussion members={members} />}
+          />
           <Route path="*" component={Home} />
         </Switch>
       </Container>

@@ -71,12 +71,12 @@ const Home = () => {
       <BodyContainer>
         <CopyTextContainer>
           <CopyText>
-            At my company, TheBash.com, we hold biweekly sprint retrospectives.
-            During these meetings, members are given the opportunity to provide
-            feedback about the most recent sprint. Feedback is given in the form
-            of "I am (happy|meh|sad)...". As members provide feedback, other
-            teammates can plus one (+1) that statement to show agreement or in
-            order to ensure that the topic will be discussed.
+            At my company, we hold biweekly sprint retrospectives. During these
+            meetings, members are given the opportunity to provide feedback
+            about the most recent sprint. Feedback is given in the form of "I am
+            (happy|meh|sad)...". As members provide feedback, other teammates
+            can plus one (+1) that statement to show agreement or in order to
+            ensure that the topic will be discussed.
           </CopyText>
           <Image
             src="https://scrumorg-website-prod.s3.amazonaws.com/drupal/inline-images/2017-03/SprintRetro.png"

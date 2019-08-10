@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Container from "../Components/Container";
 
@@ -13,7 +13,6 @@ const FieldSet = styled.fieldset`
 `;
 
 const Legend = styled.legend`
-  text-align: ${props => props.align};
   background-color: white;
   border: 1px solid black;
   padding: 5px;
@@ -55,75 +54,221 @@ const Button = styled.button`
 
 const SaveButton = styled(Button)`
   width: auto;
-  height: 32px;
+  height: auto;
   margin: 5px 5px 5px 30px;
 `;
 
-const Health = () => {
+const Health = ({ members }) => {
+  const [member, setMember] = useState(0);
+  const [name, setName] = useState(members[0].name);
+  const [feedback, setFeedback] = useState("");
+  const [score, setScore] = useState(0);
+  const [happy, setHappy] = useState([]);
+  const [meh, setMeh] = useState([]);
+  const [sad, setSad] = useState([]);
+  let iter = 0;
+  const memberList = members;
+
+  function clearFields() {
+    setMember(0);
+    setName(memberList[0].name);
+    setFeedback("");
+    setScore(0);
+  }
+
   return (
     <Container>
       <FieldSet color="lightgreen">
-        <Legend align="left">Happy</Legend>
+        <Legend>Happy</Legend>
         <Row>
           <Cell>
             <Label>Member:</Label>
-            <Select>
-              <option>this</option>
+            <Select
+              onChange={e => {
+                setMember(e.target.key);
+                setName(e.target.value);
+              }}
+              value={memberList[member]}
+            >
+              {memberList.map(m => (
+                <option key={m.id} name={m.name}>
+                  {m.name}
+                </option>
+              ))}
             </Select>
             <Label>Feedback:</Label>
-            <TextArea></TextArea>
-            <Button>-</Button>
-            <Label>2</Label>
-            <Button>+</Button>
-            <SaveButton>Save Feedback</SaveButton>
+            <TextArea
+              onChange={e => setFeedback(e.target.value)}
+              value={feedback}
+            />
+            <Button
+              onClick={() => {
+                if (score > 0) setScore(score - 1);
+              }}
+            >
+              -
+            </Button>
+            <Label>{score}</Label>
+            <Button
+              onClick={() => {
+                if (score < memberList.length) setScore(score + 1);
+              }}
+            >
+              +
+            </Button>
+            <SaveButton
+              onClick={() => {
+                setHappy([
+                  ...happy,
+                  {
+                    name: name,
+                    feedback: feedback,
+                    score: score
+                  }
+                ]);
+                clearFields();
+              }}
+            >
+              Save Feedback
+            </SaveButton>
           </Cell>
           <Cell>
             <Select size="8" box>
-              <option>that</option>
+              {happy.map(m => (
+                <option key={++iter}>
+                  {m.name + ": " + m.score + " - " + m.feedback}
+                </option>
+              ))}
             </Select>
           </Cell>
         </Row>
       </FieldSet>
       <FieldSet color="lightyellow">
-        <Legend align="center">Meh</Legend>
+        <Legend>Meh</Legend>
         <Row>
           <Cell>
             <Label>Member:</Label>
-            <Select>
-              <option>this</option>
+            <Select
+              onChange={e => {
+                setMember(e.target.key);
+                setName(e.target.value);
+              }}
+              value={memberList[member]}
+            >
+              {memberList.map(m => (
+                <option key={m.id} name={m.name}>
+                  {m.name}
+                </option>
+              ))}
             </Select>
             <Label>Feedback:</Label>
-            <TextArea></TextArea>
-            <Button>-</Button>
-            <Label>2</Label>
-            <Button>+</Button>
-            <SaveButton>Save Feedback</SaveButton>
+            <TextArea
+              onChange={e => setFeedback(e.target.value)}
+              value={feedback}
+            />
+            <Button
+              onClick={() => {
+                if (score > 0) setScore(score - 1);
+              }}
+            >
+              -
+            </Button>
+            <Label>{score}</Label>
+            <Button
+              onClick={() => {
+                if (score < memberList.length) setScore(score + 1);
+              }}
+            >
+              +
+            </Button>
+            <SaveButton
+              onClick={() => {
+                setMeh([
+                  ...meh,
+                  {
+                    name: name,
+                    feedback: feedback,
+                    score: score
+                  }
+                ]);
+                clearFields();
+              }}
+            >
+              Save Feedback
+            </SaveButton>
           </Cell>
           <Cell>
             <Select size="8" box>
-              <option>that</option>
+              {meh.map(m => (
+                <option key={++iter}>
+                  {m.name + ": " + m.score + " - " + m.feedback}
+                </option>
+              ))}
             </Select>
           </Cell>
         </Row>
       </FieldSet>
       <FieldSet color="pink">
-        <Legend align="right">Sad</Legend>
+        <Legend>Sad</Legend>
         <Row>
           <Cell>
             <Label>Member:</Label>
-            <Select>
-              <option>this</option>
+            <Select
+              onChange={e => {
+                setMember(e.target.key);
+                setName(e.target.value);
+              }}
+              value={memberList[member]}
+            >
+              {memberList.map(m => (
+                <option key={m.id} name={m.name}>
+                  {m.name}
+                </option>
+              ))}
             </Select>
             <Label>Feedback:</Label>
-            <TextArea></TextArea>
-            <Button>-</Button>
-            <Label>2</Label>
-            <Button>+</Button>
-            <SaveButton>Save Feedback</SaveButton>
+            <TextArea
+              onChange={e => setFeedback(e.target.value)}
+              value={feedback}
+            />
+            <Button
+              onClick={() => {
+                if (score > 0) setScore(score - 1);
+              }}
+            >
+              -
+            </Button>
+            <Label>{score}</Label>
+            <Button
+              onClick={() => {
+                if (score < memberList.length) setScore(score + 1);
+              }}
+            >
+              +
+            </Button>
+            <SaveButton
+              onClick={() => {
+                setSad([
+                  ...sad,
+                  {
+                    name: name,
+                    feedback: feedback,
+                    score: score
+                  }
+                ]);
+                clearFields();
+              }}
+            >
+              Save Feedback
+            </SaveButton>
           </Cell>
           <Cell>
             <Select size="8" box>
-              <option>that</option>
+              {sad.map(m => (
+                <option key={++iter}>
+                  {m.name + ": " + m.score + " - " + m.feedback}
+                </option>
+              ))}
             </Select>
           </Cell>
         </Row>
